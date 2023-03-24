@@ -68,5 +68,10 @@
 SetTimer () =&gt; ToolTip(), -5000</pre>
 </div>
 
+<div class="ex" id="ExFollowMouse">
+<p><a class="ex_number" href="#ExFollowMouse"></a> Shows a Tooltip that follows the mouse, and hides the tooltip after a certain amount of time.</p>
+<pre>ToolTip2("This tooltip will follow the mouse.",5) =&gt; ToolTip2(Text?, TimeSeconds:=5, WhichToolTip?){ =&gt; 	SetTimer(ToolTipSub.Bind(Text?, A_TickCount+TimeSeconds*1000, WhichToolTip?), 50) =&gt;  =&gt; 	ToolTipSub(Text?, TimeTarget?, WhichToolTip?){ =&gt; 		if (A_TickCount>TimeTarget){ =&gt; 			Text := "" =&gt; 			SetTimer(,0) =&gt; 		} =&gt;         ToolTip(Text?,,,WhichToolTip?) =&gt; 	} =&gt; }</pre>
+</div>
+
 </body>
 </html>
